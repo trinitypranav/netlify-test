@@ -2,6 +2,11 @@ const express = require("express");
 require("dotenv").config();
 const app = express();
 
+app.get("/", (req, res) => {
+  console.log(process.env.USER_DATA);
+  res.status(200).send("this is home " + process.env.USER_DATA);
+});
+
 app.get("/getData", (req, res) => {
   console.log(process.env.USER_DATA);
   res.status(200).send(process.env.USER_DATA);
